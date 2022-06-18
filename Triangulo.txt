@@ -1,0 +1,30 @@
+package com.example.teste;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Triangulo extends AppCompatActivity {
+    EditText txtBaseTriangulo;
+    EditText txtAlturaTriangulo;
+    TextView tvMostraTriangulo;
+    double calTriangulo = 0;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_triangulo);
+        txtBaseTriangulo = findViewById(R.id.txtBaseTriangulo);
+        txtAlturaTriangulo = findViewById(R.id.txtAlturaTriangulo);
+        tvMostraTriangulo = findViewById(R.id.tvMostraTriangulo);
+    }
+    public void CalAreaTriangulo(View view){
+        double baseTriangulo = Double.parseDouble(txtBaseTriangulo.getText().toString());
+        double altTriangulo = Double.parseDouble(txtAlturaTriangulo.getText().toString());
+        calTriangulo = (baseTriangulo * altTriangulo) / 2;
+        tvMostraTriangulo.setText(String.valueOf(calTriangulo));
+    }
+
+}

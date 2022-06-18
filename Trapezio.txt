@@ -1,0 +1,32 @@
+package com.example.teste;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Trapezio extends AppCompatActivity {
+    EditText txtPrimBaseTrapezio;
+    EditText txtSegunBaseTrapezio;
+    EditText txtAltuTrapezio;
+    TextView tvExibirTrapezio;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_trapezio);
+        txtPrimBaseTrapezio = findViewById(R.id.txtPrimBaseTrapezio);
+        txtSegunBaseTrapezio = findViewById(R.id.txtSegunBaseTrapezio);
+        txtAltuTrapezio = findViewById(R.id.txtAltuTrapezio);
+        tvExibirTrapezio = findViewById(R.id.tvExibirTrapezio);
+    }
+    public void calcularTrapezio(View view){
+        double PrimTrapezio = Double.parseDouble(txtPrimBaseTrapezio.getText().toString());
+        double SegunTrapezio = Double.parseDouble(txtSegunBaseTrapezio.getText().toString());
+        double altuTrapezio = Double.parseDouble(txtAltuTrapezio.getText().toString());
+        double calAreaTrapezio = ((PrimTrapezio + SegunTrapezio)*altuTrapezio)/2;
+        tvExibirTrapezio.setText(String.valueOf(calAreaTrapezio));
+    }
+}

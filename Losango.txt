@@ -1,0 +1,29 @@
+package com.example.teste;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Losango extends AppCompatActivity {
+    EditText txtDiagonalMaior;
+    EditText txtDiagonalMenor;
+    TextView tvExibirLosango;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_losango);
+        txtDiagonalMaior = findViewById(R.id.txtDiagonalMaior);
+        txtDiagonalMenor = findViewById(R.id.txtDiagonalMenor);
+        tvExibirLosango = findViewById(R.id.tvExibirLosango);
+    }
+    public void CalAreaLosango(View view){
+        double digMaior = Double.parseDouble(txtDiagonalMaior.getText().toString());
+        double digMenor = Double.parseDouble(txtDiagonalMenor.getText().toString());
+        double calLosango = (digMaior * digMenor) / 2;
+        tvExibirLosango.setText(String.valueOf(calLosango));
+    }
+
+}

@@ -1,0 +1,29 @@
+package com.example.teste;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Paralelograma extends AppCompatActivity {
+    EditText txtBaseParalelo;
+    EditText txtAlturaParalelo;
+    TextView tvExibirParalelo;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_paralelograma);
+        txtBaseParalelo = findViewById(R.id.txtBaseParalelo);
+        txtAlturaParalelo = findViewById(R.id.txtAlturaParalelo);
+        tvExibirParalelo = findViewById(R.id.tvExibirParalelo);
+    }
+    public void CalcLosango(View view){
+        double bParalelo = Double.parseDouble(txtBaseParalelo.getText().toString());
+        double aParalelo = Double.parseDouble(txtAlturaParalelo.getText().toString());
+        double calParalelo = bParalelo * aParalelo;
+        tvExibirParalelo.setText(String.valueOf(calParalelo));
+    }
+}

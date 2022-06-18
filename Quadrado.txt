@@ -1,0 +1,25 @@
+package com.example.teste;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Quadrado extends AppCompatActivity {
+    EditText txtLadoQd1;
+    TextView tvExibirQuadrado;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_quadrado);
+        txtLadoQd1 = findViewById(R.id.txtLadoQd1);
+        tvExibirQuadrado = findViewById(R.id.tvExibirQuadrado);
+    }
+    public void AreaQuadrado(View view){
+        double valor1 = Double.parseDouble(txtLadoQd1.getText().toString());
+        valor1 = valor1 * 4;
+        tvExibirQuadrado.setText(String.valueOf(valor1));
+    }
+}
